@@ -94,9 +94,10 @@ h1 {
   font-family: monospace;
 }
 
-.search img {
-  width: 35px;
-  height: 35px;
+.search-btn{
+  transform: scale(2);
+  background-color: transparent;
+  border: none;
   cursor: pointer;
 }
 

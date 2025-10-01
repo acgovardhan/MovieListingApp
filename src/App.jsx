@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import Movie from "./components/Movie";
+import { FaSearch } from "react-icons/fa";
 
 const API_URL = `https://www.omdbapi.com?apikey=${import.meta.env.VITE_API_KEY}`;
 
 const movie1 = {
-  "Title":"Not Movie Found",
+  "Title":"Movie Not Found",
   "Year": "Nil",
   "imdbID": "tt2586634",
   "Type": "Nil",
@@ -42,11 +43,9 @@ function App() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <img 
-                src="src/assets/search-button-svg.svg"
-                alt="search"
-                onClick={() => searchMovies(searchTerm)}
-              />
+              <button className="search-btn" onClick={() => searchMovies(searchTerm)}>
+                <FaSearch/>
+              </button>
             </div>
           </div>
 
