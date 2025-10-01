@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Movie from "./components/Movie";
 
-const API_URL = `http://www.omdbapi.com?apikey=${import.meta.env.VITE_API_KEY}`;
+const API_URL = `https://www.omdbapi.com?apikey=${import.meta.env.VITE_API_KEY}`;
 
 const movie1 = {
   "Title":"Not Movie Found",
@@ -23,7 +23,7 @@ function App() {
   }
 
   useEffect(() => {
-    searchMovies('Spiderman');
+    searchMovies('Superman');
   }, []);
 
   return (
@@ -59,7 +59,7 @@ function App() {
                   
                   </>
                 ) : (
-                  movies.map((movie) => (
+                  movies.slice(1).map((movie) => (
                     <Movie movie={movie} key={movie.imdbID} />
                   ))
                 )
